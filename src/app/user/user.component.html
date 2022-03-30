@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Hello! Please indicate your name:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #f="ngForm" class="mat-elevation-z8" style="width: 100%; padding: 5px;">
+            <mat-form-field>
+                <input matInput placeholder="Name" name="name" [(ngModel)]="user.name" required>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button *ngIf="!user.id" (click)="createUser(f)" color="primary">Let's Chat!</button>
+    </mat-card-actions>
+</mat-card>
+<output *ngIf="message" style="color: red;" name="name" [value]="message">
